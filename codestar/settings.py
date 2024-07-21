@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-h=@&os&ch^33fh9a$+mo2q#fa6p6enadiwt)$*v%sg-hk3h)i('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["8000-farhatamann-djangoblog2-eyktloyhtbr.ws.codeinstitute-ide.net",
     ".herokuapp.com"]
@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
     # }
 
 DATABASES = {
-    'default': dj_database_urlfarha.islam@students.codeinstitute.net.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 CSRF_TRUSTED_ORIGINS = [
