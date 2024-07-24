@@ -29,3 +29,15 @@ class Meta:
 
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
+
+
+class Event(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    description = models.TextField()
+    date = models.DateTimeField()
+    status = models.IntegerField(choices=STATUS, default=0)
+    organizer = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="organized_events"
+    )
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)

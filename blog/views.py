@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Post
+from .models import Event
 
 # Create your views here.
 class PostList(generic.ListView):
@@ -28,5 +29,6 @@ def post_detail(request, slug):
     return render(
         request,
         "blog/post_detail.html",
-        {"post": post},
+        {"post": post,},
     )
+
